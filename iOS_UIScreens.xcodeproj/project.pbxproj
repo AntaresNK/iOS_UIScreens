@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		818D90022AACAC860025A223 /* Overpass-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 81CB57472AAC9DE0005DFF7E /* Overpass-Regular.ttf */; };
+		818D90032AACAC890025A223 /* Overpass-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 81CB57462AAC9DD0005DFF7E /* Overpass-Bold.ttf */; };
 		8195F7702AA99951008DCF6F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8195F76F2AA99951008DCF6F /* AppDelegate.swift */; };
 		8195F7722AA99951008DCF6F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8195F7712AA99951008DCF6F /* SceneDelegate.swift */; };
 		8195F7742AA99951008DCF6F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8195F7732AA99951008DCF6F /* ViewController.swift */; };
@@ -15,8 +17,7 @@
 		8195F7872AA99952008DCF6F /* iOS_UIScreensTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8195F7862AA99952008DCF6F /* iOS_UIScreensTests.swift */; };
 		8195F7912AA99952008DCF6F /* iOS_UIScreensUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8195F7902AA99952008DCF6F /* iOS_UIScreensUITests.swift */; };
 		8195F7932AA99952008DCF6F /* iOS_UIScreensUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8195F7922AA99952008DCF6F /* iOS_UIScreensUITestsLaunchTests.swift */; };
-		8195F7A22AA9B143008DCF6F /* Overpass_Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8195F7A02AA9B143008DCF6F /* Overpass_Regular.ttf */; };
-		8195F7A32AA9B143008DCF6F /* Overpass_Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8195F7A12AA9B143008DCF6F /* Overpass_Bold.ttf */; };
+		81CB57492AACA508005DFF7E /* ShadowEffects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81CB57482AACA508005DFF7E /* ShadowEffects.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,7 +41,7 @@
 		8195F76C2AA99951008DCF6F /* iOS_UIScreens.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOS_UIScreens.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8195F76F2AA99951008DCF6F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8195F7712AA99951008DCF6F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		8195F7732AA99951008DCF6F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		8195F7732AA99951008DCF6F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ViewController.swift; path = iOS_UIScreens/ViewController.swift; sourceTree = SOURCE_ROOT; };
 		8195F7782AA99952008DCF6F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8195F77B2AA99952008DCF6F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8195F77D2AA99952008DCF6F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -49,8 +50,9 @@
 		8195F78C2AA99952008DCF6F /* iOS_UIScreensUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iOS_UIScreensUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8195F7902AA99952008DCF6F /* iOS_UIScreensUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOS_UIScreensUITests.swift; sourceTree = "<group>"; };
 		8195F7922AA99952008DCF6F /* iOS_UIScreensUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOS_UIScreensUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		8195F7A02AA9B143008DCF6F /* Overpass_Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Overpass_Regular.ttf; sourceTree = "<group>"; };
-		8195F7A12AA9B143008DCF6F /* Overpass_Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Overpass_Bold.ttf; sourceTree = "<group>"; };
+		81CB57462AAC9DD0005DFF7E /* Overpass-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Overpass-Bold.ttf"; path = "iOS_UIScreens/Fonts/Overpass-Bold.ttf"; sourceTree = SOURCE_ROOT; };
+		81CB57472AAC9DE0005DFF7E /* Overpass-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Overpass-Regular.ttf"; path = "iOS_UIScreens/Fonts/Overpass-Regular.ttf"; sourceTree = SOURCE_ROOT; };
+		81CB57482AACA508005DFF7E /* ShadowEffects.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShadowEffects.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +107,7 @@
 				8195F76F2AA99951008DCF6F /* AppDelegate.swift */,
 				8195F7712AA99951008DCF6F /* SceneDelegate.swift */,
 				8195F7732AA99951008DCF6F /* ViewController.swift */,
+				81CB57482AACA508005DFF7E /* ShadowEffects.swift */,
 				8195F7782AA99952008DCF6F /* Assets.xcassets */,
 				8195F77A2AA99952008DCF6F /* LaunchScreen.storyboard */,
 				8195F77D2AA99952008DCF6F /* Info.plist */,
@@ -132,8 +135,8 @@
 		8195F79F2AA9B114008DCF6F /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
-				8195F7A12AA9B143008DCF6F /* Overpass_Bold.ttf */,
-				8195F7A02AA9B143008DCF6F /* Overpass_Regular.ttf */,
+				81CB57472AAC9DE0005DFF7E /* Overpass-Regular.ttf */,
+				81CB57462AAC9DD0005DFF7E /* Overpass-Bold.ttf */,
 			);
 			path = Fonts;
 			sourceTree = "<group>";
@@ -242,9 +245,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8195F7A32AA9B143008DCF6F /* Overpass_Bold.ttf in Resources */,
+				818D90022AACAC860025A223 /* Overpass-Regular.ttf in Resources */,
 				8195F77C2AA99952008DCF6F /* LaunchScreen.storyboard in Resources */,
-				8195F7A22AA9B143008DCF6F /* Overpass_Regular.ttf in Resources */,
+				818D90032AACAC890025A223 /* Overpass-Bold.ttf in Resources */,
 				8195F7792AA99952008DCF6F /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -270,6 +273,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				81CB57492AACA508005DFF7E /* ShadowEffects.swift in Sources */,
 				8195F7742AA99951008DCF6F /* ViewController.swift in Sources */,
 				8195F7702AA99951008DCF6F /* AppDelegate.swift in Sources */,
 				8195F7722AA99951008DCF6F /* SceneDelegate.swift in Sources */,

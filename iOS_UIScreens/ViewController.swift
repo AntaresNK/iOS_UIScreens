@@ -10,7 +10,7 @@ import UIKit
 class ViewController: UIViewController {
     
     let locationIcon = UIImageView()
-    let cityLabel = UILabel()
+    var cityLabel = UILabel()
     let dropIcon = UIButton()
     let notificationBell = UIImageView()
     let ellipseImageView = UIImageView()
@@ -22,13 +22,14 @@ class ViewController: UIViewController {
     let dateLabel = UILabel()
     let currentTemp = UILabel()
     let currentWeather = UILabel()
-    let insetWind = UILabel()
+    let degree = UILabel()
+    let insetWind = UIImageView()
     let windIcon = UIImageView()
-    let windLabel = UILabel()
+    let windText = UIImageView()
     let windSpeedLabel = UILabel()
-    let insetRain = UILabel()
+    let insetRain = UIImageView()
     let rainIcon = UIImageView()
-    let rainLabel = UILabel()
+    let rainText = UIImageView()
     let rainPossibility = UILabel()
     let weeklyButton = UIButton()
     let weeklyLabel = UILabel()
@@ -56,7 +57,8 @@ class ViewController: UIViewController {
         
         cityLabel.text = "Алматы"
         cityLabel.textColor = UIColor(red: 1, green: 1, blue: 1, alpha: 1)
-        cityLabel.font = UIFont.boldSystemFont(ofSize: 24)
+        cityLabel.font = UIFont(name: "Overpass-Bold", size: 24)
+        cityLabel.addShadow()
         cityLabel.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(cityLabel)
         
@@ -76,7 +78,7 @@ class ViewController: UIViewController {
         sunImageView.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(sunImageView)
         
-        vectorImageView.image = UIImage(named: "Vector")
+        vectorImageView.image = UIImage(named: "vectorr")
         vectorImageView.translatesAutoresizingMaskIntoConstraints = false
         vectorImageView.clipsToBounds = true
         vectorImageView.contentMode = .topLeft
@@ -91,34 +93,35 @@ class ViewController: UIViewController {
         todayView.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(todayView)
         
-        todayLabel.text = "Сегодня, "
+        todayLabel.text = "Сегодня, " + "26 Апрель"
         todayLabel.textColor = UIColor(red: 1, green: 1, blue: 1, alpha: 1)
-        todayLabel.font = UIFont.systemFont(ofSize: 18)
+        todayLabel.font = UIFont(name: "Overpass-Regular", size: 18)
+        todayLabel.addShadow()
         todayLabel.translatesAutoresizingMaskIntoConstraints = false
         todayView.addSubview(todayLabel)
         
-        dateLabel.text = "26 Апрель"
-        dateLabel.textColor = UIColor(red: 1, green: 1, blue: 1, alpha: 1)
-        dateLabel.font = UIFont.systemFont(ofSize: 18)
-        dateLabel.translatesAutoresizingMaskIntoConstraints = false
-        todayView.addSubview(dateLabel)
-        
-        currentTemp.text = "22" + "°"
+        currentTemp.text = "22"
         currentTemp.textColor = UIColor(red: 1, green: 1, blue: 1, alpha: 1)
-        currentTemp.font = UIFont.systemFont(ofSize: 100)
+        currentTemp.font = UIFont(name: "Overpass-Regular", size: 100)
         currentTemp.translatesAutoresizingMaskIntoConstraints = false
+        currentTemp.addShadowAndShape()
         todayView.addSubview(currentTemp)
+        
+        degree.text = "°"
+        degree.textColor = UIColor(red: 1, green: 1, blue: 1, alpha: 1)
+        degree.font = UIFont(name: "Overpass-Regular", size: 72)
+        degree.addShadowAndShape()
+        degree.translatesAutoresizingMaskIntoConstraints = false
+        todayView.addSubview(degree)
         
         currentWeather.text = "Солнечно"
         currentWeather.textColor = UIColor(red: 1, green: 1, blue: 1, alpha: 1)
-      //  currentWeather.font = UIFont(name: "Overpass_Bold", size: 36)
-        currentWeather.font = UIFont.systemFont(ofSize: 24)
+        currentWeather.font = UIFont(name: "Overpass-Bold", size: 24)
+        currentWeather.addShadow()
         currentWeather.translatesAutoresizingMaskIntoConstraints = false
         todayView.addSubview(currentWeather)
         
-        insetWind.text = "|"
-        insetWind.textColor = UIColor(red: 1, green: 1, blue: 1, alpha: 1)
-        insetWind.font = UIFont.systemFont(ofSize: 18)
+        insetWind.image = UIImage(named: "inset")
         insetWind.translatesAutoresizingMaskIntoConstraints = false
         todayView.addSubview(insetWind)
         
@@ -126,21 +129,18 @@ class ViewController: UIViewController {
         windIcon.translatesAutoresizingMaskIntoConstraints = false
         todayView.addSubview(windIcon)
         
-        windLabel.text = "Ветер"
-        windLabel.textColor = UIColor(red: 1, green: 1, blue: 1, alpha: 1)
-        windLabel.font = UIFont.systemFont(ofSize: 18)
-        windLabel.translatesAutoresizingMaskIntoConstraints = false
-        todayView.addSubview(windLabel)
+        windText.image = UIImage(named: "windv")
+        windText.translatesAutoresizingMaskIntoConstraints = false
+        todayView.addSubview(windText)
         
         windSpeedLabel.text = "15" + " km/h"
         windSpeedLabel.textColor = UIColor(red: 1, green: 1, blue: 1, alpha: 1)
-        windSpeedLabel.font = UIFont.systemFont(ofSize: 18)
+        windSpeedLabel.font = UIFont(name: "Overpass-Regular", size: 18)
+        windSpeedLabel.addShadow()
         windSpeedLabel.translatesAutoresizingMaskIntoConstraints = false
         todayView.addSubview(windSpeedLabel)
         
-        insetRain.text = "|"
-        insetRain.textColor = UIColor(red: 1, green: 1, blue: 1, alpha: 1)
-        insetRain.font = UIFont.systemFont(ofSize: 18)
+        insetRain.image = UIImage(named: "inset")
         insetRain.translatesAutoresizingMaskIntoConstraints = false
         todayView.addSubview(insetRain)
         
@@ -148,25 +148,25 @@ class ViewController: UIViewController {
         rainIcon.translatesAutoresizingMaskIntoConstraints = false
         todayView.addSubview(rainIcon)
         
-        rainLabel.text = "Дождь"
-        rainLabel.textColor = UIColor(red: 1, green: 1, blue: 1, alpha: 1)
-        rainLabel.font = UIFont.systemFont(ofSize: 18)
-        rainLabel.translatesAutoresizingMaskIntoConstraints = false
-        todayView.addSubview(rainLabel)
+        rainText.image = UIImage(named: "rainv")
+        rainText.translatesAutoresizingMaskIntoConstraints = false
+        todayView.addSubview(rainText)
         
         rainPossibility.text = "26" + "%"
         rainPossibility.textColor = UIColor(red: 1, green: 1, blue: 1, alpha: 1)
-        rainPossibility.font = UIFont.systemFont(ofSize: 18)
+        rainPossibility.font = UIFont(name: "Overpass-Regular", size: 18)
+        rainPossibility.addShadow()
         rainPossibility.translatesAutoresizingMaskIntoConstraints = false
         todayView.addSubview(rainPossibility)
 
         weeklyButton.backgroundColor = UIColor(red: 1, green: 1, blue: 1, alpha: 1)
         weeklyButton.layer.cornerRadius = 20
         weeklyButton.translatesAutoresizingMaskIntoConstraints = false
+        weeklyButton.addShadowAndShape()
         view.addSubview(weeklyButton)
         
         weeklyLabel.text = "Прогноз на неделю"
-        weeklyLabel.font = UIFont.systemFont(ofSize: 16)
+        weeklyLabel.font = UIFont(name: "Overpass-Regular", size: 16)
         weeklyLabel.textColor = UIColor(red: 68/255, green: 78/255, blue: 114/255, alpha: 1)
         weeklyLabel.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(weeklyLabel)
@@ -179,7 +179,7 @@ class ViewController: UIViewController {
     func setupConstraints() {
         
         NSLayoutConstraint.activate([
-            locationIcon.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            locationIcon.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 30),
             locationIcon.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 31),
             locationIcon.widthAnchor.constraint(equalToConstant: 24),
             locationIcon.heightAnchor.constraint(equalToConstant: 24)
@@ -227,14 +227,14 @@ class ViewController: UIViewController {
         ])
         
         NSLayoutConstraint.activate([
-            todayView.widthAnchor.constraint(equalToConstant: 313),
+            todayView.widthAnchor.constraint(equalToConstant: 333),
             todayView.heightAnchor.constraint(equalToConstant: 300),
             todayView.topAnchor.constraint(equalTo: vectorImageView.bottomAnchor, constant: 20),
             todayView.centerXAnchor.constraint(equalTo: view.centerXAnchor)
         ])
         
         NSLayoutConstraint.activate([
-            frameView.widthAnchor.constraint(equalToConstant: 313),
+            frameView.widthAnchor.constraint(equalToConstant: 333),
             frameView.heightAnchor.constraint(equalToConstant: 300),
             frameView.topAnchor.constraint(equalTo: vectorImageView.bottomAnchor, constant: 20),
             frameView.centerXAnchor.constraint(equalTo: view.centerXAnchor)
@@ -242,21 +242,21 @@ class ViewController: UIViewController {
         
         NSLayoutConstraint.activate([
             todayLabel.topAnchor.constraint(equalTo: todayView.topAnchor, constant: 17),
-            todayLabel.leadingAnchor.constraint(equalTo: todayView.leadingAnchor, constant: 80)
-        ])
-        
-        NSLayoutConstraint.activate([
-            dateLabel.centerYAnchor.constraint(equalTo: todayLabel.centerYAnchor),
-            dateLabel.leadingAnchor.constraint(equalTo: todayLabel.trailingAnchor, constant: 0)
+            todayLabel.centerXAnchor.constraint(equalTo: todayView.centerXAnchor)
         ])
         
         NSLayoutConstraint.activate([
             currentTemp.topAnchor.constraint(equalTo: todayLabel.bottomAnchor, constant: 5),
-            currentTemp.leadingAnchor.constraint(equalTo: todayView.leadingAnchor, constant: 90)
+            currentTemp.centerXAnchor.constraint(equalTo: todayView.centerXAnchor)
         ])
         
         NSLayoutConstraint.activate([
-            currentWeather.topAnchor.constraint(equalTo: currentTemp.bottomAnchor, constant: 5),
+            degree.topAnchor.constraint(equalTo: todayLabel.bottomAnchor, constant:  15),
+            degree.leadingAnchor.constraint(equalTo: currentTemp.trailingAnchor)
+        ])
+        
+        NSLayoutConstraint.activate([
+            currentWeather.topAnchor.constraint(equalTo: currentTemp.bottomAnchor),
             currentWeather.centerXAnchor.constraint(equalTo: todayView.centerXAnchor)
         ])
         
@@ -273,8 +273,8 @@ class ViewController: UIViewController {
         ])
         
         NSLayoutConstraint.activate([
-            windLabel.centerYAnchor.constraint(equalTo: insetWind.centerYAnchor),
-            windLabel.leadingAnchor.constraint(equalTo: windIcon.trailingAnchor, constant: 15)
+            windText.centerYAnchor.constraint(equalTo: windIcon.centerYAnchor),
+            windText.leadingAnchor.constraint(equalTo: windIcon.trailingAnchor, constant: 15)
         ])
         
         NSLayoutConstraint.activate([
@@ -295,8 +295,8 @@ class ViewController: UIViewController {
         ])
         
         NSLayoutConstraint.activate([
-            rainLabel.centerYAnchor.constraint(equalTo: insetRain.centerYAnchor),
-            rainLabel.leadingAnchor.constraint(equalTo: rainIcon.trailingAnchor, constant: 15)
+            rainText.centerYAnchor.constraint(equalTo: insetRain.centerYAnchor),
+            rainText.leadingAnchor.constraint(equalTo: rainIcon.trailingAnchor, constant: 15)
         ])
         
         NSLayoutConstraint.activate([
@@ -313,16 +313,13 @@ class ViewController: UIViewController {
         
         NSLayoutConstraint.activate([
             weeklyLabel.centerYAnchor.constraint(equalTo: weeklyButton.centerYAnchor),
-            weeklyLabel.leadingAnchor.constraint(equalTo: weeklyButton.leadingAnchor, constant: 24)
+            weeklyLabel.leadingAnchor.constraint(equalTo: weeklyButton.leadingAnchor, constant: 28)
         ])
         
         NSLayoutConstraint.activate([
             arrowUp.centerYAnchor.constraint(equalTo: weeklyButton.centerYAnchor),
-            arrowUp.trailingAnchor.constraint(equalTo: weeklyButton.trailingAnchor, constant: -24)
+            arrowUp.trailingAnchor.constraint(equalTo: weeklyButton.trailingAnchor, constant: -28)
         ])
-
     }
-
-
 }
 

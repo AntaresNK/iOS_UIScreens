@@ -4,8 +4,8 @@
 <dict>
 	<key>UIAppFonts</key>
 	<array>
-		<string>Overpass_Bold.ttf</string>
-		<string>Overpass_Regular.ttf</string>
+		<string>Overpass-Regular.ttf</string>
+		<string>Overpass-Bold.ttf</string>
 	</array>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
