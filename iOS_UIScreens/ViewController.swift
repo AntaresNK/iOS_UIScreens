@@ -104,13 +104,13 @@ class ViewController: UIViewController {
         currentTemp.textColor = UIColor(red: 1, green: 1, blue: 1, alpha: 1)
         currentTemp.font = UIFont(name: "Overpass-Regular", size: 100)
         currentTemp.translatesAutoresizingMaskIntoConstraints = false
-        currentTemp.addShadowAndShape()
+        currentTemp.addShadowEffect()
         todayView.addSubview(currentTemp)
         
         degree.text = "°"
         degree.textColor = UIColor(red: 1, green: 1, blue: 1, alpha: 1)
         degree.font = UIFont(name: "Overpass-Regular", size: 72)
-        degree.addShadowAndShape()
+        degree.addShadowEffect()
         degree.translatesAutoresizingMaskIntoConstraints = false
         todayView.addSubview(degree)
         
@@ -162,7 +162,7 @@ class ViewController: UIViewController {
         weeklyButton.backgroundColor = UIColor(red: 1, green: 1, blue: 1, alpha: 1)
         weeklyButton.layer.cornerRadius = 20
         weeklyButton.translatesAutoresizingMaskIntoConstraints = false
-        weeklyButton.addShadowAndShape()
+        weeklyButton.addShadowEffect()
         view.addSubview(weeklyButton)
         
         weeklyLabel.text = "Прогноз на неделю"
